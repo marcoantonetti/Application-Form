@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html lang="EN">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Survey Form">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Marco Antonetti">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <script src="https://kit.fontawesome.com/a494238601.js" crossorigin="anonymous"></script>
+
+    
+    <link href="css/application-form.css" type="text/css" rel="stylesheet">
+    <link href="css/button-styles.css" type="text/css" rel="stylesheet">
+
+
+</head>
+
+<!--Each form step is a section with the class of 'card' and a data-step of an increasing number starting in 1
+    Each card has its own inputs-->
+
+<body>
+
+    <header>
+        <h1 class='a' id="title"> Front-End Web Developer Job Application Form</h1>
+        <p class='a' id="description"> We are looking for a Front-End Web Developer who is motivated to combine
+             the art of design with the art of programming.
+             Responsibilities will include translation of the UI/UX design wireframes to actual code. You will work with the UI/UX designer and bridge the gap between graphical design a
+              nd technical implementation, taking an active role on both sides and defining how the application looks as well 
+              as how it works.</p>
+    </header>
+
+    <form id='survey form' action="results.html" method="GET" data-multi-step>
+        <!--cambia id a application-form desps de entregarlo a FCC-->
+
+        <section class='card active' data-active data-step id="personal-info">
+
+            <fieldset>
+                <legend class="card-title"> Personal Info </legend>
+
+                <div class="form-group">
+                    <label  for="name">Full name</label>
+                    <input type="text" id="name" name="name" placeholder="Names and last name" autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate">Birthdate</label>
+                    <input type="date" id="birthdate" name="birthdate" max="2002-12-31">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" placeholder="Age" min="21" max="50">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option label='Male' value="Male"></option>
+                        <option value="Female">Female</option>
+                        <option label='Other' value="Other"></option>
+                    </select>
+                </div>
+
+                <button type="button" class='next' id="first-next-button"> Next
+                </button>
+            </fieldset>
+
+        </section>
+
+        <section class='card' data-step id="skill-step">
+
+            <fieldset>
+                <legend class="card-title"> Skills background </legend>
+                <h2> Front-End aquaired skills </h2>
+                <!--Only one check box here. Rest added with JS-->
+                <div class="form-group checkbox-container">
+
+                    <input type="checkbox" id="html" name="html">
+                    <label class='checkbox-skill first-child' for="html"> HTML </label>
+
+                </div>
+
+                <div class="form-group" id="lang-form-group">
+                    <label id='lang-label' for="Languajes">Languajes</label>
+                    <input type="text" id="Languajes" disabled name="Languajes" placeholder="Languajes">
+                    <select id="languajes-select">
+                        <!--No name for this one, since we wont use it for input purposes, only style-->
+                        <option label="Languajes" value="none" disabled selected hidden> Languajes </option>
+                        <!--Option elements are dinamically added with JS-->
+                    </select>
+                </div>
+
+                <button type="button" class="plus-cross-buttons" id="lang-remove"> <i class="fa fa-trash-o" id=trash-button aria-hidden="true"></i></button>
+
+                <button type="button" class="previous"> Previous </button>
+                <button type="button" class='next'> Next </button>
+            </fieldset>
+        </section>
+
+        <section class='card ' data-step id="experience">
+
+            <fieldset>
+                <legend class="card-title"> Experience </legend>
+
+                <div class="big-container">
+                    <!--Job experience. Job input texts and year numbers. Only one here, rest added with JS-->
+                    <div class="job-container" style="--order: 10">
+
+                        <div class="form-group jobs-input">
+                            <label for="jobs">Jobs</label>
+                            <input type="text" class="job" id="jobs" name="jobs" placeholder="Jobs" autofocus>
+                        </div>
+
+                        <div class="form-group years-employed-input">
+                            <label for="end">End</label>
+                            <input placeholder = 'Year' id="end" type="text" pattern="\d*" maxlength="4" class="end" name="end">
+                        </div>
+
+                        <div class="form-group years-employed-input">
+                            <label for="start">Start</label>
+                            <input placeholder = 'Year' id="start" type="text" pattern="\d*" maxlength="4 class="start" name="start">
+                        </div>
+
+                    </div>
+
+                </div>
+                <button type='button' class="plus-cross-buttons " id="plus-button"> <i class="fa fa-plus" aria-hidden="true"> </i>
+                </button>
+                <button type='button' class="plus-cross-buttons" id="cross-button"> <i class="fa fa-trash-o" aria-hidden="true"> </i>
+                </button>
+
+
+
+                <div class="form-group personal-site">
+                    <label for="personal-site">Personal Site</label>
+                    <input type="text" id="personal-site" name="personal-site"
+                            placeholder="Do you have a portfolio site?" autofocus> 
+                </div>
+
+                <button type="button" class="previous"> Previous </button>
+                <button type="button" class='next'> Next </button>
+            </fieldset>
+        </section>
+
+        <section class='card ' data-step id="contact">
+
+            <fieldset>
+                <legend class="card-title"> Contact </legend>
+                <!--Job experience, if not, proyects made. Add them in file or attach github-->
+                <div class="form-group social-media">
+                    <legend style="font-size: 1rem">Social Media</legend>
+                    <label for="github"></label>
+                    <i class="fa-brands fa-github"></i><input type="text" id="github" name="github" placeholder="Github" autofocus>
+                    <label for="linkedin"></label>
+                    <i class="fa-brands fa-linkedin"></i><input type="text" id="linkedin" name="linkedin" placeholder="LinkedIn" autofocus>
+                    <label for="whatsapp"></label>
+                    <i class="fa-brands fa-whatsapp"></i><input type='tel' pattern="[0-9]+" id="whatsapp" name="whatsapp" placeholder="Whatsapp" autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email">
+                </div>
+                <button type="button" class="previous"> Previous </button>
+                <button type="button" class='next'> Next </button>
+            </fieldset>
+
+        </section>
+
+        <section class='card' data-step id="letter">
+
+            <fieldset>
+                <legend class="card-title"> Application Letter </legend>
+
+                <div class="form-group application-card">
+
+                    <label for="application-letter">Application letter</label>
+                    <textarea id="application-letter" name="application letter" placeholder="Why you should be hired?"
+                        cols="30" rows="5" role="application"></textarea>
+                </div>
+
+                <button type="button" class="previous" id="last-previous-button"> Previous </button>
+                <button class='submit' type="submit" value="Apply" accesskey="s"> Submit </button>
+            </fieldset>
+        </section>
+
+    </form>
+
+    <script src="application-form.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+*{
+    --min-height: 380px;
+}
+
+body {
+    color: #613505;
+
+}
+
+/*Setting up the background image, since I wanted it to have opacity I had to 
+upload the background image in a pseuclass before of the body. This way only the image
+has this filter and not the rest of the body */
+body::before {
+    content: "";
+    background-image: url(../images/background-image.jpg);
+    background-size: 100% 100%;
+    height: 135%;
+
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    filter: brightness(0.6);  
+    opacity:0.8;  
+
+}
+/*This position allows the form and header not to have the body:before filter. Its position its relative to body*/
+form,
+header {
+    position: relative;
+}
+
+header {
+    text-align: center;
+    margin: 50px auto;
+    margin-top: 30px;
+    max-width: 1000px;
+    
+
+
+}
+
+header :is(h1,p){  
+
+    color: #613505;
+    border-radius: 0.5rem;
+    background-color: #fefdfaaf;
+    padding: .5rem;
+    font-size: 1.4rem;
+
+}
+
+#title{
+    font-size: 2rem;
+    max-width: 500px;
+    margin: auto;
+}
+
+
+#description {
+    margin-bottom: 30px;
+}
+
+
+
+/*Styling the cards. Setting a fixed size and centering it in the middle with margin auto. 
+Making it responsive to screens*/
+.card {
+
+    position: relative;
+    box-shadow: 3px 3px 3px #0000007c,
+                -3px -3px 3px #0000007c;
+    ;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: solid black 1px;
+
+    width: 300px;
+    min-height: var(--min-height);
+    margin: auto;
+    display: none;
+
+    transform: scale(1.1); /*Decided to make the form a bit bigger at the end of the proyect*/
+
+}
+
+.card.active {
+    display: block;
+}
+
+.card-title {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+h2{
+    font-weight: bold;
+    font-size: 1em;
+    min-height: 1.2rem;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+fieldset {
+    margin: -.5rem;
+    min-height: var(--min-height);
+    width: 290px;
+    min-width: 290px;
+    font-size: 1rem;
+
+}
+
+
+
+
+/*Style for the form group which are the labels with inputs/selects*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: .7rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 1rem;
+    min-height: 1rem;
+}
+
+.form-group input, select {
+    border-radius: 0.25rem;
+    border: solid 1px rgba(51, 51, 51, 0.577);
+    font-size: 1rem;
+    padding: .25rem;
+    
+}
+
+
+/*Style for skills card*/
+
+/* Checkbox Buttons*/
+/*Sort the checkboxes in a 3 row grid*/
+.checkbox-container {
+    width: 60px;
+    
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: auto auto auto;
+    
+}
+
+/*With the last child centered*/
+.checkbox-container label:last-child{
+    grid-column-end: 3;
+}
+/*Rest of the checkbox style is in button-styles.css*/
+/* languaje input. Mainly is in the JS file*/
+
+#lang-form-group {
+    width: 85%;
+    margin-top: 20px;
+}
+
+/*Style for experience card*/
+
+.jobs-input{
+    width: 60%;
+    float: left;
+    margin-bottom: -15px;
+}
+
+.years-employed-input{
+    width: 15%;
+    float: right;
+    margin-right: 6px ;
+    margin-bottom: -15px;
+    
+}
+
+.personal-site{
+    width: 270px;
+    padding-top: 55px;
+}
+
+/*Code for social media in contact card*/
+
+.social-media label{
+    position: absolute;
+}
+
+.social-media input{
+    width: 230px;
+    margin-left: 30px;
+}
+
+.fa-brands {
+    position: absolute;
+    width: 20px;
+    top: 95px;
+    left: 27px;
+    
+    filter: brightness(0.8);
+    transform: scale(1.4);
+    color: rgb(170, 70, 190)
+}
+
+.fa-linkedin{
+    top: 133px;
+    color: rgb(35, 155, 202)
+}
+
+.fa-whatsapp{
+    top: 167px ;
+    color: #46a03ee8;
+}
+
+/*Style for application-card*/
+
+.application-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+textarea{
+   max-width: 290px;
+   min-width: 290px;
+
+   max-height: 260px;
+
+}
+
+/*Remove Arrows/Spinners for numbers input*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

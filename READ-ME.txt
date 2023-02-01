@@ -1,0 +1,22 @@
+input text nombre y apellido id=name
+input mail  id=mail
+numero  id=number con max y min intervalo
+que haya un dropdown
+un radio buttons
+un checkboxes
+submit id=submit
+
+idiomas que hablas
+
+agregar input type files para agregar archivos, si haces esto agrega el attributo al submit llamado formenctype = multipart/form data
+
+alfinal de todo preguntar si queres crear una cuenta asi se guardan tus datos --> haces un form login con name y password
+
+pone un alert al principio diciendo que hay hay algunos datos no relevantes como age pero lo pusiste para poner mas habilidad en la pagina
+
+`
+`
+
+Agrega max caracteres a los inputs. Asi no podes escribir mas de 30 letras o lo que sea
+
+Dinamically adds inputs (text, checkboxes) with JS

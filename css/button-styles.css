@@ -1,0 +1,259 @@
+/*Variables */
+
+:root{
+    --position-relative-to-button-count: 125px;
+    --checkbox-content: 'hola';
+
+    /*Styles for plus and cross buttons and checkboxes*/
+    --button-border: solid 1.5px #DE441B; 
+    --border-radius: 3px;
+
+    --color: #613505;
+    --background-color: transparent;
+    
+    --background-color-hover: #de451b54;
+    --color-hover: #6b4011;
+  }
+
+
+
+/*Styling card buttons.*/
+
+button {
+    background: #6b4011;
+    border: none;
+    width: 3.5rem;
+    padding: .25rem;
+    font-size: 1rem;
+
+    text-align: center;
+    border-radius: 10px;
+
+    color: white;
+
+    transition: 1s;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+button:hover {
+  background: var(--background-hover);
+  color: var(--color);
+}
+
+
+#first-next-button {
+    right: 1rem;
+
+}
+.next, .submit  {
+    position: absolute;
+    bottom: 1rem;
+    right: 4.90rem;
+    width: 5rem;
+
+}
+
+.previous{
+
+    position: absolute;
+    bottom: 1rem;
+    left: 5.15rem;
+
+    width: 5rem; /*Particular width due to long word*/
+
+}
+
+
+
+
+
+/* Submit button style inspired by yuhomyan at free front end.com */
+.submit {
+
+   border-radius: 10px;
+
+   background: transparent;
+   color: #fff;
+   -webkit-perspective: 300px;
+   perspective: 300px;
+   -webkit-transform-style: preserve-3d;
+   transform-style: preserve-3d;
+ }
+
+ .submit:hover{
+   color: #6b4011;
+ }
+ 
+ .submit:after {
+   position: absolute;
+   content: "";
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #a26018;
+   z-index: -1;
+   -webkit-transform-origin: center bottom;
+   transform-origin: center bottom;
+   -webkit-transform: rotateX(0);
+   transform: rotateX(0);
+   transition: all 0.3s ease;
+
+   border-radius: 10px;
+ }
+ .submit:hover:after {
+   -webkit-transform: rotateX(-180deg);
+   transform: rotateX(-180deg);
+ }
+
+   
+/*Plus and cross buttons*/
+/* In the job section there are plus and cross buttons. They move dinamically with JS */
+/*They share some styling in common with the checkboxes*/
+.big-container{
+  position: relative;
+}
+
+.plus-cross-buttons{
+  all: initial;
+  position: absolute;
+  top: calc(var(  --position-relative-to-button-count) );
+  
+  border-radius: var(--border-radius);
+
+  color: #A33602;
+  background-color: var(--background-color);
+  font-weight: 500;
+
+  width: 12px;
+  height: 12px;
+  text-align: center;
+
+  padding: 2px 8px 8px 5px;
+  
+  transform: scale(1.1);
+  cursor:pointer;
+
+  -webkit-transition: all 0.1s ;
+  -o-transition: all 0.1s ;
+  transition: all 0.1s ;
+}
+
+.plus-cross-buttons:hover{
+
+  color: var(--color-hover) ;
+  background-color: var(--background-color-hover);
+  border-radius: var(--border-radius);
+
+
+
+}
+
+#plus-button{
+  font-weight: 1000;
+  left: 22px;
+
+}
+
+
+#cross-button{
+  left: 52px;
+}
+
+/* Checkbox Buttons*/
+/* Inputs with a display of none. I will work with the labels*/
+input[type='checkbox']{
+
+    display: none;
+
+}
+
+
+.checkbox-container label {
+  position: relative;
+
+  text-align: center ;  
+  font-size: .80rem !important ;
+  color: var(--color);
+  
+  
+  background-color: var(--background-color);
+
+  padding: .20rem 0.1rem 0.2rem 0.6rem;
+  border-radius: var(--border-radius);
+  width: 85px;
+
+  cursor: pointer;
+
+
+
+}
+
+.checkbox-container label:hover{
+  background-color: var(--background-color-hover);
+  color: var(--color-hover);
+  border-radius: var(--border-radius);
+
+  -webkit-transition: all 0.6s ;
+  -o-transition: all 0.6s ;
+  transition: all 0.6s ;
+
+
+}
+
+.checkbox-container label::before{
+  position: absolute;
+
+  content: '';
+  display: inline-block;
+
+  left: 0px;
+  top: 6px; 
+
+  width: 6px;
+  height: 6px;
+
+  background: none;
+  border: var( --button-border);
+  border-radius: 50%;
+}
+
+.checkbox-container input[type='checkbox']:checked + label {
+  padding: .20rem 0rem 0.1rem 0rem;
+  background-color:  #FFAA59;
+  width: 90px;
+
+  -webkit-transition: all 0.6s ;
+  -o-transition: all 0.6s ;
+  transition: all 0.6s ;
+
+}
+
+.checkbox-container input[type='checkbox']:checked + label::before {
+  
+  display: none;
+
+}
+
+
+
+/* Code for options elements*/
+
+option {
+  text-transform: capitalize;
+  
+}
+
+#lang-remove{
+
+  top: 278px;
+  left: 280px;
+  
+
+}
+
+
+
+
