@@ -1,22 +1,28 @@
-input text nombre y apellido id=name
-input mail  id=mail
-numero  id=number con max y min intervalo
-que haya un dropdown
-un radio buttons
-un checkboxes
-submit id=submit
+My application-form proyect. 
 
-idiomas que hablas
+In this proyect you have a multi step form with a general title and description.
+Each step has its own category and input types, the user can access to them by clicking on
+the next and previous buttons.
 
-agregar input type files para agregar archivos, si haces esto agrega el attributo al submit llamado formenctype = multipart/form data
+User must complete some of the inputs correctly in order to advance to the next step.
 
-alfinal de todo preguntar si queres crear una cuenta asi se guardan tus datos --> haces un form login con name y password
+There is a progress bar on top that shows the current step you are in.
 
-pone un alert al principio diciendo que hay hay algunos datos no relevantes como age pero lo pusiste para poner mas habilidad en la pagina
+All steps have a display of none except the one that is active (class = 'active'). 
 
-`
-`
+This proyect is dinamically enhanced with JS: Introducing and removing DOM elements or attributes 
+such as inputs and class names respectively, allowing the multi step and progress bar functionality,
+enabling the languaje dropdown selector functionality (like avoiding repetion and deleting inputs),
+and some other features.
 
-Agrega max caracteres a los inputs. Asi no podes escribir mas de 30 letras o lo que sea
+This was a good opportunity to apply my problem solving skills with javascript, taking advantage of the 
+many built-in methods and functions that handle data and its structures. Creating functions and variables that play with
+the HTML and CSS was an excelent way to grasp the full front-end web dev experience.
+Also I further increased my knowledge and experience in creating a good scalable code (/*with comments*/).
 
-Dinamically adds inputs (text, checkboxes) with JS
+As for HTML I continue to learn about the importance of containers and overall structure of a page,
+also I learned a lot about forms, how they work, there input types and what elements and attributes are needed to make it submitable.
+
+Lastly I keep falling in love with CSS. Further comprehending positioning and containers; fixed, relative and auto values;
+pseudoclasses and its advantages; color theory; inheritance; variables and the scalability that they offer;
+

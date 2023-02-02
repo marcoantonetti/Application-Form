@@ -38,7 +38,33 @@
     </header>
 
     <form id='survey form' action="results.html" method="GET" data-multi-step>
+
         <!--cambia id a application-form desps de entregarlo a FCC-->
+
+        <section class="progress-bar">
+            <ul class="progress-bar-list">
+                <li class="progress-bar-item current-item">
+                    <span class="progress-count">1</span>
+                    <span class="progress-label"></span>
+                </li>
+                <li class="progress-bar-item">
+                    <span class="progress-count">2</span>
+                    <span class="progress-label"></span>
+                </li>
+                <li class="progress-bar-item">
+                    <span class="progress-count">3</span>
+                    <span class="progress-label"></span>
+                </li>
+                <li class="progress-bar-item">
+                    <span class="progress-count">4</span>
+                    <span class="progress-label"></span>
+                </li>
+                <li class="progress-bar-item">
+                    <span class="progress-count">5</span>
+                    <span class="progress-label"></span>
+                </li>
+            </ul>
+        </section>
 
         <section class='card active' data-active data-step id="personal-info">
 
@@ -47,17 +73,17 @@
 
                 <div class="form-group">
                     <label  for="name">Full name</label>
-                    <input type="text" id="name" name="name" placeholder="Names and last name" autofocus>
+                    <input required type="text" id="name" name="name" placeholder="Jhon Doe" autofocus>
                 </div>
 
                 <div class="form-group">
                     <label for="birthdate">Birthdate</label>
-                    <input type="date" id="birthdate" name="birthdate" max="2002-12-31">
+                    <input required type="date" id="birthdate" name="birthdate" max="2002-12-31">
                 </div>
 
                 <div class="form-group">
                     <label for="age">Age</label>
-                    <input type="number" id="age" name="age" placeholder="Age" min="21" max="50">
+                    <input required type="number" id="age" name="age" placeholder="21+" min="21" max="50">
                 </div>
 
                 <div class="form-group">
@@ -89,8 +115,8 @@
                 </div>
 
                 <div class="form-group" id="lang-form-group">
-                    <label id='lang-label' for="Languajes">Languajes</label>
-                    <input type="text" id="Languajes" disabled name="Languajes" placeholder="Languajes">
+                    <label id='lang-label' for="Languajes">Languajes</label> 
+                    <input type="text" id="Languajes" disabled name="Languajes" placeholder="Languajes" required>
                     <select id="languajes-select">
                         <!--No name for this one, since we wont use it for input purposes, only style-->
                         <option label="Languajes" value="none" disabled selected hidden> Languajes </option>
@@ -158,17 +184,17 @@
                 <div class="form-group social-media">
                     <legend style="font-size: 1rem">Social Media</legend>
                     <label for="github"></label>
-                    <i class="fa-brands fa-github"></i><input type="text" id="github" name="github" placeholder="Github" autofocus>
+                    <i class="fa-brands fa-github"></i><input required type="text" id="github" name="github" placeholder="Github" autofocus>
                     <label for="linkedin"></label>
-                    <i class="fa-brands fa-linkedin"></i><input type="text" id="linkedin" name="linkedin" placeholder="LinkedIn" autofocus>
+                    <i class="fa-brands fa-linkedin"></i><input required type="text" id="linkedin" name="linkedin" placeholder="LinkedIn" autofocus>
                     <label for="whatsapp"></label>
-                    <i class="fa-brands fa-whatsapp"></i><input type='tel' pattern="[0-9]+" id="whatsapp" name="whatsapp" placeholder="Whatsapp" autofocus>
+                    <i class="fa-brands fa-whatsapp"></i><input required type='tel' pattern="[0-9]+" id="whatsapp" name="whatsapp" placeholder="Whatsapp" autofocus>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Email">
-                </div>
+                    <input required type="email" id="email" name="email" placeholder="Email">
+                </div>  
                 <button type="button" class="previous"> Previous </button>
                 <button type="button" class='next'> Next </button>
             </fieldset>
@@ -182,8 +208,8 @@
 
                 <div class="form-group application-card">
 
-                    <label for="application-letter">Application letter</label>
-                    <textarea id="application-letter" name="application letter" placeholder="Why you should be hired?"
+                    <label for="application-letter"></label>
+                    <textarea required id="application-letter" name="application letter" placeholder="Why you should be hired?"
                         cols="30" rows="5" role="application"></textarea>
                 </div>
 

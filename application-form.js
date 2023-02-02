@@ -2,8 +2,14 @@
 // Get the form element on a variable
 const multiCardForm = document.querySelector('[data-multi-step]')
 
-// I create a list of cards
+// Create an array of cards
 const formCards = [...multiCardForm.querySelectorAll('[data-step]')]
+
+// Get the progress bar list
+const progressBarList = document.querySelector('.progress-bar-list')
+
+// Creat an array of progress bar items
+const progressBarItems = [...progressBarList.querySelectorAll('.progress-bar-item')]
 
 // All cards have a display:none except the one with the class='active'
 // CurrentStep is the one that is active
@@ -17,7 +23,7 @@ let currentStep =  formCards.findIndex((step) =>{
 // Clicking butttons will change the currentstep and show the new active.
 multiCardForm.addEventListener('click', e => {
 
-    let incrementor 
+    let incrementor ;
     
 
     // If its previous, it goes to the previous card. If it next, function continues.
@@ -53,9 +59,14 @@ multiCardForm.addEventListener('click', e => {
 // This function add 'active' class only if index === currentStep. If not, it removes the active class.
 // This uses the updated current Step, after clicking the buttons.
 const showCurrentStep = () => {
+
     formCards.forEach( (step, index) => {
         step.classList.toggle('active', index === currentStep)
     } )
+
+    progressBarItems.forEach((item, index) => {
+        item.classList.toggle('current-item', index === currentStep)
+    })
 }
 
 
@@ -88,10 +99,8 @@ multiCardForm.addEventListener('click', (e) => {
 let valuePosition = 125 + buttonCount * 50;
 console.log(buttonCount)
 
-   if (e.target.matches('.fa-plus')){
-        console.log('fa-plus')
+   if (e.target.matches('.fa-plus') || e.target.matches('#plus-button')){
         if(buttonCount <=3){ // Max 4 jobs inputs
-            console.log('puta')
 
             addJobInput()
 
@@ -102,12 +111,11 @@ console.log(buttonCount)
             
         } 
            
-   } else if (e.target.matches('.fa-trash-o') && buttonCount > 1) {
+   } else if (e.target.matches('.fa-trash-o')  || e.target.matches('#cross-button') && buttonCount > 1) {
     console.log
     // Button count >1 So that it cant remove the initial job input
 
         removeJobInput()
-        console.log('puto')
 
         valuePosition -= 100
 
@@ -128,7 +136,6 @@ console.log(buttonCount)
 const addJobInput = () => {
 
     // Containter creation
-    console.log('asdasds')
 
     let container = document.createElement('div')
     container.className = 'job-container'
@@ -286,7 +293,7 @@ multiCardForm.addEventListener('click', (e) => {
         }      
         
         // If remove button is clicked, then it eliminates the last languaje input
-        else if (e.target.matches('#trash-button')) {
+        else if (e.target.matches('#trash-button') || e.target.matches('#lang-remove')) {
             
             // Makes an array of the input values
             let array = langInput.value.split(',')
@@ -298,6 +305,8 @@ multiCardForm.addEventListener('click', (e) => {
             
             // We add the option back to the array, so that its clickeable
             langArray.push(spliceLang)
+
+            console.log(langArray)
         
             langInput.value = array.toString()
             

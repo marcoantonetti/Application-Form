@@ -12,7 +12,7 @@
     --background-color: transparent;
     
     --background-color-hover: #de451b54;
-    --color-hover: #6b4011;
+    --color-hover: #1b89a7;
   }
 
 
@@ -123,7 +123,7 @@ button:hover {
   
   border-radius: var(--border-radius);
 
-  color: #A33602;
+  color: #1b89a7;
   background-color: var(--background-color);
   font-weight: 500;
 
@@ -218,12 +218,15 @@ input[type='checkbox']{
   background: none;
   border: var( --button-border);
   border-radius: 50%;
+  
 }
 
 .checkbox-container input[type='checkbox']:checked + label {
   padding: .20rem 0rem 0.1rem 0rem;
   background-color:  #FFAA59;
   width: 90px;
+  --color-hover: #6b4011;
+
 
   -webkit-transition: all 0.6s ;
   -o-transition: all 0.6s ;
@@ -248,7 +251,7 @@ option {
 
 #lang-remove{
 
-  top: 278px;
+  top: 290px;
   left: 280px;
   
 
