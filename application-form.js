@@ -111,7 +111,7 @@ console.log(buttonCount)
             
         } 
            
-   } else if (e.target.matches('.fa-trash-o')  || e.target.matches('#cross-button') && buttonCount > 1) {
+   } else if (e.target.matches('#trash-icon')  || e.target.matches('#cross-button') && buttonCount > 1) {
     console.log
     // Button count >1 So that it cant remove the initial job input
 
