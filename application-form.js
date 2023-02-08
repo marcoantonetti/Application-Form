@@ -95,7 +95,7 @@ let bigContainer = document.querySelector('.big-container')
 // Event
 multiCardForm.addEventListener('click', (e) => {
 
-// The initial value position set on CSS custom variable is of 120px. Each addition on the buttoncount will add 45px to this variable.
+// The initial value position set on CSS custom variable is of 125px. Each addition on the buttoncount will add 45px to this variable.
 let valuePosition = 125 + buttonCount * 50;
 console.log(buttonCount)
 
@@ -112,7 +112,6 @@ console.log(buttonCount)
         } 
            
    } else if (e.target.matches('#trash-icon')  || e.target.matches('#cross-button') && buttonCount > 1) {
-    console.log
     // Button count >1 So that it cant remove the initial job input
 
         removeJobInput()

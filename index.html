@@ -23,8 +23,6 @@
 
 </head>
 
-<!--Each form step is a section with the class of 'card' and a data-step of an increasing number starting in 1
-    Each card has its own inputs-->
 
 <body>
 
@@ -39,7 +37,7 @@
 
     <form id='survey form' action="results.html" method="GET" data-multi-step>
 
-        <!--cambia id a application-form desps de entregarlo a FCC-->
+        <!--One section for the progress bar, then one section for each step of the form-->
 
         <section class="progress-bar">
             <ul class="progress-bar-list">
@@ -118,7 +116,6 @@
                     <label id='lang-label' for="Languajes">Languajes</label> 
                     <input type="text" id="Languajes" disabled name="Languajes" placeholder="Languajes" required>
                     <select id="languajes-select">
-                        <!--No name for this one, since we wont use it for input purposes, only style-->
                         <option label="Languajes" value="none" disabled selected hidden> Languajes </option>
                         <!--Option elements are dinamically added with JS-->
                     </select>
@@ -180,7 +177,6 @@
 
             <fieldset>
                 <legend class="card-title"> Contact </legend>
-                <!--Job experience, if not, proyects made. Add them in file or attach github-->
                 <div class="form-group social-media">
                     <legend style="font-size: 1rem">Social Media</legend>
                     <label for="github"></label>
